@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>spittles</title>
+</head>
+<body>
+    <h1>Recent Spittles</h1>
+    <table >
+        <tr th:each="spittle,spittleStat : ${spittleList}">
+            <td th:text="${spittleStat.count}"></td>&nbsp;
+            <td th:text="${spittle.message}"></td>&nbsp;
+            <td th:text="${spittle.time}"></td>
+        </tr>
+    </table>
+</body>
+</html>
