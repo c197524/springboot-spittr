@@ -8,4 +8,6 @@ public interface SpitterService {
     Spitter findByUsername(String username);
 
     Boolean findUserExistByUsername(String username);
+
+    boolean validateLogin(Spitter spitter);
 }

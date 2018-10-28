@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>register</title>
     <link href="/static/css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="/static/js/validateError.js"></script>
 </head>
 <body>
     <h1>Register</h1>
@@ -11,22 +12,22 @@
         <table>
             <tr>
                 <td>firstname:</td>
-                <td><input type="text" th:field="*{firstname}" /></td>
-                <td class="myerror" th:if="${#fields.hasErrors('firstname')}"  th:errors="*{firstname}">firstname Error</td>
+                <td><input onclick="cleanError()" type="text" th:field="*{firstname}" /></td>
+                <td class="myerror"  th:if="${#fields.hasErrors('firstname')}"  th:errors="*{firstname}">firstname Error</td>
             </tr>
             <tr>
                 <td>lastname:</td>
-                <td><input type="text" th:field="*{lastname}" /></td>
+                <td><input onclick="cleanError()" type="text" th:field="*{lastname}" /></td>
                 <td class="myerror" th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}">lastname Error</td>
             </tr>
             <tr>
                 <td>username:</td>
-                <td><input type="text" th:field="*{username}" /></td>
+                <td><input  onclick="cleanError()" type="text" th:field="*{username}" /></td>
                 <td class="myerror" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">username Error</td>
             </tr>
             <tr>
                 <td>password:</td>
-                <td><input type="password" th:field="*{password}" /></td>
+                <td><input onclick="cleanError()" type="password" th:field="*{password}" /></td>
                 <td class="myerror" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">password Error</td>
             </tr>
             <tr>

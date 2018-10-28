@@ -25,4 +25,9 @@ public class SpitterServiceImp implements SpitterService {
     public Boolean findUserExistByUsername(String username) {
         return spitterDao.findUserExistByUsername(username);
     }
+
+    @Override
+    public boolean validateLogin(Spitter spitter) {
+        return spitterDao.validateLogin(spitter);
+    }
 }

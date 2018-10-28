@@ -8,4 +8,6 @@ public interface SpitterDao {
     Spitter findByUsername(String username);
 
     Boolean findUserExistByUsername(String username);
+
+    boolean validateLogin(Spitter spitter);
 }

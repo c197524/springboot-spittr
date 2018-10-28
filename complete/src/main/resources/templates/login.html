@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
+    <script type="text/javascript" src="/static/js/validateError.js"></script>
+</head>
+<body>
+    <h1>Login</h1>
+
+    <form action="/spitter/login" th:object="${spitter}"  method="post">
+        <table>
+            <tr>
+                <td>Username:</td>
+                <td><input onclick="cleanError()" th:field="*{username}" name="username"  type="text" ></td>
+                <td class="myerror" th:if="${valiError} != null" th:text="${valiError}"></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input name="password" type="password"></td>
+            </tr>
+            <tr>
+                <td><button type="submit">login</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

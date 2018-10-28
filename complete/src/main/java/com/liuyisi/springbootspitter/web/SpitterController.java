@@ -10,7 +10,9 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 @Controller
@@ -41,6 +43,28 @@ public class SpitterController {
             @PathVariable String username, Model model) {
         model.addAttribute(spitterService.findByUsername(username));
         return "profile";
+    }
+
+    @RequestMapping(value = "/login",method = RequestMethod.GET)
+    public String showLoginPage(Model model) {
+        model.addAttribute(new Spitter());
+        return "login";
+    }
+
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    public String login(Spitter spitter, HttpSession session,Model model) {
+        if (!spitterService.validateLogin(spitter)) {
+            model.addAttribute("valiError","用户名或密码错误");
+            return "login";
+        }
+        session.setAttribute("spitter",spitter);
+        return "redirect:/";
+    }
+
+    @RequestMapping("/logout")
+    public String logout(HttpSession session) {
+        session.removeAttribute("spitter");
+        return "redirect:/";
     }
 
 }

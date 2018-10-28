@@ -33,5 +33,11 @@ public class SpitterDaoImp implements SpitterDao {
         return jdbcTemplate.queryForObject(sql, Long.class, username) > 0 ? true : false;
     }
 
+    @Override
+    public boolean validateLogin(Spitter spitter) {
+        String sql = "select count(*) from spitter where username=? and password=?";
+        return jdbcTemplate.queryForObject(sql,Long.class,spitter.getUsername(),spitter.getPassword()) > 0 ? true:false;
+    }
+
 
 }
