@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
-    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
-    <script type="text/javascript" src="/static/js/validateError.js"></script>
+    <link href="/css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/validateError.js"></script>
 </head>
 <body>
+    <a class="nonedecoration" href="/">Back to home</a>
     <h1>Login</h1>
 
     <form action="/spitter/login" th:object="${spitter}"  method="post">

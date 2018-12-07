@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>register</title>
-    <link href="/static/css/style.css" rel="stylesheet">
-    <script type="text/javascript" src="/static/js/validateError.js"></script>
+    <link href="/css/style.css" rel="stylesheet">
+    <script type="text/javascript" src="/validateError.js"></script>
 </head>
 <body>
+    <a class="nonedecoration" href="/">Back to home</a>
     <h1>Register</h1>
     <form action="/spitter/register"  th:object="${spitter}" method="post">
         <table>
@@ -31,7 +32,7 @@
                 <td class="myerror" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">password Error</td>
             </tr>
             <tr>
-                <td><button type="submit">Submit</button></td>
+                <td><button type="submit" >Register</button></td>
             </tr>
         </table>
     </form>

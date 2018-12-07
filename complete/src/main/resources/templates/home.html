@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <link href="/css/style.css" rel="stylesheet">
 </head>
 <body>
+
     <h1>Welcome to Spittr <label th:if="${#session.getAttribute('spitter')} != null "th:text="${#session.getAttribute('spitter').username}">hello</label></h1>
-    <a href="/spittles">Spittles</a> |
-    <a th:if="${#session.getAttribute('spitter')} == null " href="/spitter/login">Login</a>
-    <a th:if="${#session.getAttribute('spitter')} != null " href="/spitter/logout">Logout</a>|
-    <a href="/spitter/register">Register</a>
+    <a class="nonedecoration" href="/spittles">Spittles</a> |
+    <a class="nonedecoration" th:if="${#session.getAttribute('spitter')} == null " href="/spitter/login">Login</a>
+    <a class="nonedecoration" th:if="${#session.getAttribute('spitter')} != null " href="/spitter/logout">Logout</a>|
+    <a class="nonedecoration" href="/spitter/register">Register</a>
 </body>
 </html>
